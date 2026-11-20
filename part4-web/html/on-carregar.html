@@ -4,8 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>On carregar a la ciutat · Càrrega Elèctrica</title>
+  <!-- Leaflet: llibreria de mapes (no és un framework). Fixem la versió 1.9.4 i en comprovem la integritat. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="../css/estils.css">
+  <link rel="stylesheet" href="../css/mapa.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
   <script src="../js/menu.js" defer></script>
+  <script src="../js/dades-punts-recarrega.js" defer></script>
+  <script src="../js/mapa.js" defer></script>
 </head>
 <body>
   <header class="capcalera">
@@ -31,8 +39,46 @@
 
   <main class="contenidor seccio pagina-interior">
     <h1>On carregar a la ciutat</h1>
-    <p>Xarxa pública de punts de càrrega, càrrega a la feina i solucions per a qui viu en un pis sense garatge.</p>
-    <p class="avis-construccio">Pàgina en construcció: el contingut complet s'afegirà per al lliurament final.</p>
+    <p class="entradeta">Mapa dels punts de recàrrega públics de la xarxa municipal <strong>Endolla Barcelona</strong>. Filtra per tipus de càrrega o ubicació i clica un punt per veure'n els endolls.</p>
+
+    <section class="mapa-zona" aria-labelledby="titol-filtres">
+      <form class="filtres" id="filtres" aria-labelledby="titol-filtres">
+        <h2 id="titol-filtres">Filtres</h2>
+
+        <fieldset>
+          <legend>Tipus de càrrega</legend>
+          <label class="opcio"><input type="checkbox" name="tipus" value="lenta" checked> <span class="punt-llegenda lenta"></span> Lenta (fins a 7,4 kW)</label>
+          <label class="opcio"><input type="checkbox" name="tipus" value="semirapida" checked> <span class="punt-llegenda semirapida"></span> Semiràpida (22 kW)</label>
+          <label class="opcio"><input type="checkbox" name="tipus" value="rapida" checked> <span class="punt-llegenda rapida"></span> Ràpida (50 kW o més)</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Ubicació</legend>
+          <label class="opcio"><input type="radio" name="ubicacio" value="totes" checked> Totes</label>
+          <label class="opcio"><input type="radio" name="ubicacio" value="carrer"> Al carrer</label>
+          <label class="opcio"><input type="radio" name="ubicacio" value="aparcament"> En aparcament</label>
+        </fieldset>
+
+        <label class="cerca" for="cerca">Cerca per adreça</label>
+        <input type="search" id="cerca" placeholder="p. ex. Diagonal">
+
+        <button type="reset" class="boto-net">Restableix els filtres</button>
+
+        <p class="comptador" id="comptador" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="mapa-contenidor">
+        <div id="mapa" class="mapa" role="region" aria-label="Mapa dels punts de recàrrega de Barcelona"></div>
+        <p class="mapa-avis" id="mapa-avis" hidden>No s'ha pogut carregar el mapa (cal connexió a internet). Pots consultar els punts a la llista de sota.</p>
+      </div>
+    </section>
+
+    <section class="llista-zona" aria-labelledby="titol-llista">
+      <h2 id="titol-llista">Llistat de punts</h2>
+      <ul class="llista-punts" id="llista-punts"></ul>
+    </section>
+
+    <p class="font-dades">Dades: <a href="https://opendata-ajuntament.barcelona.cat/data/ca/dataset/informacio-punts-recarrega-electric">Open Data BCN · Informació ampliada dels punts de recàrrega</a> (3r trimestre 2026, llicència CC BY 4.0). Mapa de fons: © Institut Cartogràfic i Geològic de Catalunya (ICGC). Llibreria de mapes: Leaflet.</p>
   </main>
 
   <footer class="peu">

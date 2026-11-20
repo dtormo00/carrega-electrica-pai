@@ -53,7 +53,7 @@ a {
 .capcalera {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1100; /* per sobre dels controls del mapa de Leaflet (z-index 1000) */
   background: var(--blanc);
   border-bottom: 1px solid var(--vora);
 }

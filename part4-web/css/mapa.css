@@ -1,0 +1,223 @@
+/* Càrrega Elèctrica · Estils de la pàgina «On carregar» (mapa i filtres) */
+
+.entradeta {
+  max-width: 65ch;
+  color: var(--text-suau);
+  font-size: 1.05rem;
+}
+
+/* Disposició: filtres a l'esquerra i mapa a la dreta */
+.mapa-zona {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.filtres {
+  align-self: start;
+  padding: 1.25rem;
+  border: 1px solid var(--vora);
+  border-radius: var(--radi);
+  background: var(--blanc);
+}
+
+.filtres h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.2rem;
+}
+
+.filtres fieldset {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: none;
+}
+
+.filtres legend {
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.opcio {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.2rem 0;
+  cursor: pointer;
+}
+
+.opcio input {
+  accent-color: var(--verd);
+}
+
+.cerca {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+#cerca {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 2px solid var(--vora);
+  border-radius: 10px;
+  font: inherit;
+}
+
+#cerca:focus {
+  outline: none;
+  border-color: var(--verd);
+}
+
+.boto-net {
+  width: 100%;
+  margin-top: 0.9rem;
+  padding: 0.55rem;
+  border: 2px solid var(--verd);
+  border-radius: 999px;
+  background: var(--blanc);
+  color: var(--verd-fosc);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.boto-net:hover {
+  background: var(--verd-clar);
+}
+
+.comptador {
+  margin: 1rem 0 0;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  background: var(--verd-clar);
+  font-size: 0.92rem;
+}
+
+/* Punts de colors de la llegenda (mateixos colors que el mapa) */
+.punt-llegenda {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid var(--blanc);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.punt-llegenda.lenta { background: #0f8a5f; }
+.punt-llegenda.semirapida { background: #e69a00; }
+.punt-llegenda.rapida { background: #c2185b; }
+
+/* Mapa */
+.mapa-contenidor {
+  min-width: 0;
+}
+
+.mapa {
+  height: 560px;
+  border: 1px solid var(--vora);
+  border-radius: var(--radi);
+  box-shadow: var(--ombra);
+}
+
+.mapa-avis {
+  padding: 1rem;
+  border-left: 6px solid #e69a00;
+  border-radius: var(--radi);
+  background: #fff8dc;
+}
+
+/* Finestra emergent del mapa */
+.popup h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.popup p {
+  margin: 0.2rem 0;
+}
+
+.popup ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.etiqueta-tipus {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.etiqueta-tipus.lenta { background: #0f8a5f; }
+.etiqueta-tipus.semirapida { background: #b37700; }
+.etiqueta-tipus.rapida { background: #c2185b; }
+
+/* Llistat de punts */
+.llista-zona {
+  margin-top: 2.5rem;
+}
+
+.llista-punts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.element-punt {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--vora);
+  border-radius: 12px;
+  background: var(--blanc);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.element-punt:hover,
+.element-punt:focus-visible {
+  border-color: var(--verd);
+  transform: translateY(-2px);
+}
+
+.element-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.element-text small {
+  color: var(--text-suau);
+}
+
+.llista-buida {
+  color: var(--text-suau);
+}
+
+.font-dades {
+  margin-top: 2rem;
+  color: var(--text-suau);
+  font-size: 0.85rem;
+}
+
+/* Responsive: en pantalles petites els filtres van a sobre del mapa */
+@media (max-width: 860px) {
+  .mapa-zona {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa {
+    height: 420px;
+  }
+}

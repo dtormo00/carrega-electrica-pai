@@ -23,13 +23,21 @@ Projecte final de **Programació d'Aplicacions a Internet** (UAB, Grau de Gesti�
 
 **Part 3:** pendent de crear el lloc a WordPress.com.
 
-**Part 4:** hi ha la pàgina d'inici amb menú responsive i 4 pàgines interiors en construcció. Pendent: els continguts, la calculadora d'estalvi i el simulador de càrrega.
+**Part 4:** hi ha la pàgina d'inici amb menú responsive i 4 pàgines interiors. La pàgina «On carregar» té un mapa interactiu de Barcelona amb els 134 punts de recàrrega públics d'Endolla Barcelona, filtres per tipus de càrrega, ubicació i adreça, un comptador i un llistat que centra el mapa en el punt triat. Pendent: els continguts de les altres pàgines, la calculadora d'estalvi i el simulador de càrrega.
+
+> El mapa necessita connexió a internet per carregar Leaflet i el fons cartogràfic. Si no n'hi ha, els filtres i el llistat continuen funcionant.
 
 ## Origen del codi de la part 2
 
 Els fitxers `index.html`, `js/script.js`, `css/style.css` i `dades/README.md` provenen del repositori del professorat [MarcEsteve/projecte-final-pai](https://github.com/MarcEsteve/projecte-final-pai) (commit `bb299cb`) i no s'han modificat. El codi propi de l'equip és a `js/estudiants.js` i `css/estudiants.css`.
 
 Dades: [Open Data BCN · Accidents segons causa conductor](https://opendata-ajuntament.barcelona.cat/data/ca/dataset/accidents_causa_conductor_gu_bcn), fitxer de 2025. El CSV no s'inclou al repositori.
+
+## Recursos externs de la part 4
+
+- [Leaflet 1.9.4](https://leafletjs.com) (llicència BSD-2), llibreria de mapes carregada des d'unpkg amb comprovació d'integritat.
+- Mapa de fons topogràfic de l'[Institut Cartogràfic i Geològic de Catalunya](https://www.icgc.cat/).
+- Punts de recàrrega: [Open Data BCN · Informació ampliada dels punts de recàrrega](https://opendata-ajuntament.barcelona.cat/data/ca/dataset/informacio-punts-recarrega-electric), fitxer del 3r trimestre de 2026 (CC BY 4.0). Està simplificat a `part4-web/js/dades-punts-recarrega.js` i es desa com a `.js` perquè funcioni obrint la web en local.
 
 ## Ús d'IA
 
