@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <ellipse cx="190" cy="250" rx="160" ry="14" fill="#0b5e42" opacity=".15"/>
+  <!-- punt de càrrega -->
+  <rect x="320" y="90" width="50" height="160" rx="10" fill="#1c2b33"/>
+  <rect x="330" y="105" width="30" height="40" rx="4" fill="#3ddc97"/>
+  <path d="M347 112l-8 14h6l-3 12 9-15h-6z" fill="#1c2b33"/>
+  <path d="M320 190c-30 0-40 20-60 20" stroke="#1c2b33" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- cotxe -->
+  <path d="M40 200l20-50c6-14 16-22 32-22h110c14 0 24 6 32 18l26 40 22 6c10 3 16 10 16 20v18H40z" fill="#0f8a5f"/>
+  <path d="M90 142h50v40H72zM152 142h46c8 0 13 3 17 10l16 30h-79z" fill="#cfeee0"/>
+  <circle cx="95" cy="236" r="24" fill="#1c2b33"/><circle cx="95" cy="236" r="10" fill="#dbe5e1"/>
+  <circle cx="245" cy="236" r="24" fill="#1c2b33"/><circle cx="245" cy="236" r="10" fill="#dbe5e1"/>
+  <!-- bateria -->
+  <rect x="150" y="40" width="90" height="40" rx="8" fill="#fff" stroke="#1c2b33" stroke-width="4"/>
+  <rect x="240" y="52" width="8" height="16" rx="2" fill="#1c2b33"/>
+  <rect x="157" y="47" width="58" height="26" rx="4" fill="#3ddc97"/>
+</svg>

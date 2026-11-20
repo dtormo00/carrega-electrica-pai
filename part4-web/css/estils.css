@@ -1,0 +1,312 @@
+/* Càrrega Elèctrica · Estils generals (Part 4) */
+
+:root {
+  --verd: #0f8a5f;
+  --verd-fosc: #0b5e42;
+  --verd-clar: #e3f5ec;
+  --groc: #f4c430;
+  --text: #1c2b33;
+  --text-suau: #566770;
+  --fons: #f7faf9;
+  --blanc: #ffffff;
+  --vora: #dbe5e1;
+  --radi: 14px;
+  --ombra: 0 12px 30px rgba(15, 60, 45, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fons);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--verd-fosc);
+}
+
+.contenidor {
+  width: min(1100px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Capçalera i menú ---------- */
+.capcalera {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--blanc);
+  border-bottom: 1px solid var(--vora);
+}
+
+.barra-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text);
+  font-size: 1.15rem;
+  text-decoration: none;
+}
+
+.logo strong {
+  color: var(--verd);
+}
+
+.menu {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background: var(--verd-clar);
+  color: var(--verd-fosc);
+}
+
+.menu a[aria-current="page"] {
+  background: var(--verd);
+  color: var(--blanc);
+}
+
+.boto-menu {
+  display: none;
+  padding: 0.35rem 0.7rem;
+  border: 2px solid var(--vora);
+  border-radius: 10px;
+  background: var(--blanc);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, var(--verd-clar), #fdfbe9);
+}
+
+.hero-contingut {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.etiqueta {
+  margin: 0;
+  color: var(--verd);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0.4rem 0 1rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+}
+
+.hero h1 span {
+  color: var(--verd);
+}
+
+.hero-botons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.boto {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.boto:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ombra);
+}
+
+.boto-primari {
+  background: var(--verd);
+  color: var(--blanc);
+}
+
+.boto-secundari {
+  border: 2px solid var(--verd);
+  background: var(--blanc);
+  color: var(--verd-fosc);
+}
+
+/* ---------- Seccions i targetes ---------- */
+.seccio {
+  padding: 3.5rem 0;
+}
+
+.seccio h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.graella-targetes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+.targeta {
+  padding: 1.5rem;
+  border: 1px solid var(--vora);
+  border-radius: var(--radi);
+  background: var(--blanc);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.targeta:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ombra);
+}
+
+.targeta h3 {
+  margin: 0.5rem 0;
+}
+
+.targeta a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.icona {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  background: var(--verd-clar);
+  font-size: 1.5rem;
+}
+
+.seccio-xifres {
+  background: var(--verd-fosc);
+  color: var(--blanc);
+}
+
+.xifres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.xifres strong {
+  display: block;
+  color: var(--groc);
+  font-size: 2.2rem;
+}
+
+.nota {
+  margin-top: 1.5rem;
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+/* Pàgines interiors en construcció */
+.pagina-interior {
+  min-height: 60vh;
+}
+
+.avis-construccio {
+  padding: 1rem 1.25rem;
+  border-left: 6px solid var(--groc);
+  border-radius: var(--radi);
+  background: #fff8dc;
+}
+
+/* ---------- Peu ---------- */
+.peu {
+  padding: 1.5rem 0;
+  background: var(--text);
+  color: #cfd8dc;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .boto-menu {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    padding: 0.5rem 1rem 1rem;
+    background: var(--blanc);
+    border-bottom: 1px solid var(--vora);
+  }
+
+  .menu.obert {
+    display: flex;
+  }
+
+  .hero-contingut {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-imatge {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .xifres {
+    grid-template-columns: 1fr;
+  }
+}

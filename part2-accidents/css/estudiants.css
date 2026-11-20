@@ -1,0 +1,91 @@
+/*
+  Estils propis dels resultats (equip Càrrega Elèctrica).
+  Els estils generals de la interfície es mantenen a style.css.
+*/
+
+/* 1. Títol de cada exercici dins la zona de resultats */
+.resultat-titol {
+  margin: 0 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--color-accent);
+  color: var(--color-primari-fosc);
+  font-size: 1.15rem;
+}
+
+/* 2. Xifra gran per al total d'accidents (exercici 01) */
+.resultat-xifra {
+  margin: 0.5rem 0 0;
+  color: var(--color-primari);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.resultat-explicacio {
+  margin-top: 0.25rem;
+  color: var(--color-text-secundari);
+}
+
+/* 3. Frase destacada amb la resposta (exercici 02) */
+.resultat-destacat {
+  padding: 0.9rem 1.1rem;
+  border-left: 5px solid var(--color-primari);
+  border-radius: 0.5rem;
+  background: #e6f3f4;
+}
+
+/* 4. Avís quan encara no hi ha dades */
+.resultat-avis {
+  padding: 0.75rem 1rem;
+  border: 1px dashed var(--color-error);
+  border-radius: 0.5rem;
+  color: var(--color-error);
+}
+
+/* 5. Taula de recompte per dia */
+.taula-resultats {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.taula-resultats caption {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secundari);
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.taula-resultats th,
+.taula-resultats td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--color-vora);
+  text-align: left;
+}
+
+.taula-resultats td:nth-child(2) {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.taula-resultats td:last-child {
+  width: 45%;
+}
+
+/* 6. Fila del dia màxim ressaltada */
+.fila-maxim {
+  background: #fdf1e1;
+  font-weight: 700;
+}
+
+/* 7. Barra horitzontal proporcional al nombre d'accidents */
+.barra {
+  display: block;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: var(--color-primari);
+}
+
+.fila-maxim .barra {
+  background: var(--color-accent);
+}

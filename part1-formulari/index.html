@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registre · Càrrega Elèctrica | PAI Part 1</title>
+  <link rel="stylesheet" href="css/formulari.css">
+  <script src="js/formulari.js" defer></script>
+</head>
+<body>
+  <main class="targeta">
+    <header class="targeta-capcalera">
+      <p class="etiqueta">PAI · Part 1 · Formulari</p>
+      <h1>Registra't a Càrrega Elèctrica</h1>
+      <p class="subtitol">Rep avisos de nous punts de càrrega al teu barri. Omple els camps en ordre: el següent s'activa quan l'actual és correcte.</p>
+    </header>
+
+    <form id="formulari-registre" novalidate>
+      <!-- Nom i cognoms -->
+      <div class="camp" data-camp="nom">
+        <label for="nom">Nom i cognoms</label>
+        <input type="text" id="nom" name="nom" autocomplete="name" placeholder="p. ex. Anna Puig Serra">
+        <p class="missatge" id="missatge-nom" aria-live="polite"></p>
+      </div>
+
+      <!-- Rang d'edat -->
+      <div class="camp" data-camp="edat">
+        <label for="edat">Rang d'edat</label>
+        <select id="edat" name="edat">
+          <option value="">Selecciona una opció</option>
+          <option value="0-17">0–17</option>
+          <option value="18-25">18–25</option>
+          <option value="26-40">26–40</option>
+          <option value="41-55">41–55</option>
+          <option value="56-65">56–65</option>
+          <option value="65+">Més de 65</option>
+        </select>
+        <p class="missatge" id="missatge-edat" aria-live="polite"></p>
+      </div>
+
+      <!-- Codi postal -->
+      <div class="camp" data-camp="cp">
+        <label for="cp">Codi postal</label>
+        <input type="text" id="cp" name="cp" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="08001">
+        <p class="missatge" id="missatge-cp" aria-live="polite"></p>
+      </div>
+
+      <!-- Correu electrònic -->
+      <div class="camp" data-camp="email">
+        <label for="email">Correu electrònic</label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="nom@exemple.cat">
+        <p class="missatge" id="missatge-email" aria-live="polite"></p>
+      </div>
+
+      <!-- Contrasenya -->
+      <div class="camp" data-camp="contrasenya">
+        <label for="contrasenya">Contrasenya</label>
+        <div class="grup-contrasenya">
+          <input type="password" id="contrasenya" name="contrasenya" autocomplete="new-password">
+          <button type="button" class="boto-ull" data-objectiu="contrasenya" aria-pressed="false">Mostra</button>
+        </div>
+        <ul class="requisits" id="requisits-contrasenya">
+          <li data-requisit="longitud">Mínim 8 caràcters</li>
+          <li data-requisit="majuscula">Una majúscula</li>
+          <li data-requisit="minuscula">Una minúscula</li>
+          <li data-requisit="digits">Dos dígits</li>
+          <li data-requisit="especial">Un signe: ! @ # $ % &amp; ?</li>
+        </ul>
+        <p class="missatge" id="missatge-contrasenya" aria-live="polite"></p>
+      </div>
+
+      <!-- Confirmació -->
+      <div class="camp" data-camp="confirmacio">
+        <label for="confirmacio">Confirma la contrasenya</label>
+        <div class="grup-contrasenya">
+          <input type="password" id="confirmacio" name="confirmacio" autocomplete="new-password">
+          <button type="button" class="boto-ull" data-objectiu="confirmacio" aria-pressed="false">Mostra</button>
+        </div>
+        <p class="missatge" id="missatge-confirmacio" aria-live="polite"></p>
+      </div>
+
+      <!-- Privacitat -->
+      <div class="camp camp-check" data-camp="privacitat">
+        <input type="checkbox" id="privacitat" name="privacitat">
+        <label for="privacitat">He llegit i accepto la política de privacitat.</label>
+        <p class="missatge" id="missatge-privacitat" aria-live="polite"></p>
+      </div>
+
+      <div class="botons">
+        <button type="reset" class="boto boto-secundari" id="boto-esborrar">Esborrar</button>
+        <button type="submit" class="boto boto-primari" id="boto-enviar">Enviar</button>
+      </div>
+    </form>
+
+    <section id="resum" class="resum" hidden aria-live="polite">
+      <h2>Registre completat ✔</h2>
+      <p>Aquestes són les dades que has enviat (les contrasenyes no es mostren):</p>
+      <dl id="resum-dades"></dl>
+    </section>
+  </main>
+</body>
+</html>
