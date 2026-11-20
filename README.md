@@ -14,6 +14,7 @@ Projecte final de **Programació d'Aplicacions a Internet** (UAB, Grau de Gesti�
 | `part2-accidents/` | 2 · Dades obertes d'accidents | Obre `index.html` i carrega el CSV de 2025 |
 | `part3-wordpress/` | 3 · Web a WordPress.com | URL: *pendent* |
 | `part4-web/` | 4 · Web HTML/CSS/JS | Obre `index.html` al navegador |
+| `docs/` | Enunciat del projecte (PDF) | — |
 
 ## Estat (Lliurament 2 · 04/12/2026)
 

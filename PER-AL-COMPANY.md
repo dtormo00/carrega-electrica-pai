@@ -99,4 +99,4 @@ Confírmame que lo has entendido con un resumen de 3 líneas y espera a que te d
 
 - **CSV de la Parte 2:** https://opendata-ajuntament.barcelona.cat/data/ca/dataset/accidents_causa_conductor_gu_bcn → descarga el archivo **2025** en CSV. Guárdalo donde quieras (no se sube al repositorio) y cárgalo con el botón de `part2-accidents/index.html`.
 - **El mapa de «On carregar»** necesita internet para cargarse.
-- **Enunciado completo:** pídeselo a Daniel en PDF; si Claude tiene dudas, adjúntaselo.
+- **Enunciado completo:** `docs/Enunciat_Projecte_Final_PAI_2026-2027_actualitzat.pdf`. Adjúntaselo a Claude al principio del chat, junto con el prompt.
